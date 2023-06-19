@@ -23,5 +23,8 @@
   },
   "scripts": {
     "test": "scripts/test.sh"
+  },
+  "dependencies": {
+    "firebase": "^9.22.2"
   }
 }

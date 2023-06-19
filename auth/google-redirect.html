@@ -28,6 +28,29 @@ limitations under the License.
   <link rel="stylesheet" href="main.css">
 
   <!-- Import and configure the Firebase SDK -->
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "firebase/app";
+    import { getAnalytics } from "firebase/analytics";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyDAqtcnox9KFjRi_e9Hh_Y9aELvHv4Jn1o",
+        authDomain: "noble-fb.firebaseapp.com",
+        projectId: "noble-fb",
+        storageBucket: "noble-fb.appspot.com",
+        messagingSenderId: "1013635072293",
+        appId: "1:1013635072293:web:fbbbcb7148afbcce9bdacc",
+        measurementId: "G-097N950WY8"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
   <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
   <!-- If you do not serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
   <script src="/__/firebase/9.22.1/firebase-app-compat.js"></script>
@@ -142,7 +165,7 @@ limitations under the License.
           <p>Sign in with your Google account below.</p>
 
           <!-- Button that handles sign-in/sign-out -->
-          <button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in">Sign in with Google</button>
+          <button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in">Sign in Google</button>
 
           <!-- Container where we'll display the user details -->
           <div class="quickstart-user-details-container">
