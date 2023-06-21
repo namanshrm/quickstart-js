@@ -112,17 +112,26 @@ limitations under the License.
       // Listening for auth state changes.
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
+          var userDetails = {
+          uid: user.uid,
+          email: user.email,
+          displayName: user.displayName,
+        };
+
+        var userDetailsString = JSON.stringify(userDetails);
           // User is signed in.
-          var displayName = user.displayName;
-          var email = user.email;
-          var emailVerified = user.emailVerified;
-          var photoURL = user.photoURL;
-          var isAnonymous = user.isAnonymous;
-          var uid = user.uid;
-          var providerData = user.providerData;
+          //var displayName = user.displayName;
+          //var email = user.email;
+          //var emailVerified = user.emailVerified;
+          //var photoURL = user.photoURL;
+          //var isAnonymous = user.isAnonymous;
+         //var uid = user.uid;
+          //var providerData = user.providerData;
           document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
           document.getElementById('quickstart-sign-in').textContent = 'Sign out';
-          document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
+          //document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
+          document.getElementById('quickstart-account-details').textContent = userDetailsString;
+          alert('logged in');
         } else {
           // User is signed out.
           document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
